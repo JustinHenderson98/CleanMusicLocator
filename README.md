@@ -7,13 +7,14 @@ The Clean Music Locator was created to be able to identify tracks in your music 
 The application works by doing the following for each song in your music library:
 
 1. Parse the song for ISRC metadata using ffprobe
-  a. If ISRC metadata is not found the song is skipped and an error is logged.
+   1. If ISRC metadata is not found the song is skipped and an error is logged.
 2. If the ISRC already exists in the database the following steps are skipped
 3. Lookup the track in https://isrc.soundexchange.com/
-  a. The metadata returned *should* contain whether the track is explicit. But this is not garunteed.
-  b. If the metadata cannot be found in https://isrc.soundexchange.com/ the track is marked as being non-explicit.
+   1. The metadata returned *should* contain whether the track is explicit. But this is not garunteed.
+   2. If the metadata cannot be found in https://isrc.soundexchange.com/ the track is marked as being non-explicit.
 4. If the track is explicit add it to the database. We don't need to look if an explicit version exists.
-5. Use metadata from https://isrc.soundexchange.com/ to search for the song by name on https://isrc.soundexchange.com/. This will return a list of tracks matching the artist, song title, and year. This may fail and the track will be marked as not having an explicit version. 
+5. Use metadata from https://isrc.soundexchange.com/ to search for the song by name on https://isrc.soundexchange.com/. This will return a list of tracks matching the artist, song title, and year.
+   1. This may fail and the track will be marked as not having an explicit version. 
 6. Validate that an explicit version of the song exists in the list of matches.
 7. Save the song with it's metadata to the database.  
 
@@ -29,7 +30,7 @@ The application works by doing the following for each song in your music library
 #### Operating System
 * Linux
   * ffmpeg/ffprobe is installed
-    * ```apt-get install ffmpeg`` 
+    * ```apt-get install ffmpeg``` 
 * Windows
   * ffprobe is installed.
     * Install ffmpeg with Choclatey
