@@ -54,7 +54,7 @@ Arguments:
 
 Process your music library at /mnt/d/Music/ with 500 milliseconds between calls to soundexchange.
 ```
-python3 main.py /mnt/d/Music/ -s 500
+python3.9 main.py /mnt/d/Music/ -s 500
 ```
 
 ### Post Execution
